@@ -1,0 +1,68 @@
+[mysqld]
+user   = mysql
+pid-file = /var/run/mysqld/mysqld.pid
+socket   = /var/run/mysqld/mysqld.sock
+port   = 3306
+basedir    = /usr
+datadir    = /var/lib/mysql
+tmpdir   = /tmp
+lc-messages-dir  = /usr/share/mysql
+explicit_defaults_for_timestamp
+
+log-error    = /var/log/mysql/error.log
+
+# Recommended in standard MySQL setup
+sql_mode=NO_ENGINE_SUBSTITUTION,STRICT_ALL_TABLES
+
+# Disabling symbolic-links is recommended to prevent assorted security risks
+symbolic-links=0
+
+# GENERAL #
+user                           = mysql
+default-storage-engine         = InnoDB
+
+# SAFETY #
+max-allowed-packet             = 16M
+max-connect-errors             = 1000000
+sysdate-is-now                 = 1
+innodb                         = FORCE
+innodb-strict-mode             = 1
+
+# SKIP #
+skip-log-bin
+skip-name-resolve
+disable-partition-engine-check
+
+# CACHES AND LIMITS #
+tmp-table-size                 = 32M
+max-heap-table-size            = 32M
+query-cache-type               = 1
+query-cache-size               = 32M
+max-connections                = 5000
+thread-cache-size              = 50
+open-files-limit               = 65535
+table-definition-cache         = 4096
+table-open-cache               = 4096
+key-cache-age-threshold        = 14400
+
+# INNODB #
+innodb-flush-method            = O_DIRECT
+innodb-log-files-in-group      = 2
+innodb-log-file-size           = 128M
+innodb-flush-log-at-trx-commit = 1
+innodb-file-per-table          = 1
+innodb-buffer-pool-size        = 2G
+innodb_lock_wait_timeout       = 300
+innodb_fast_shutdown           = 0
+
+# LOGGING #
+slow-query-log                 = 1
+slow-query-log-file            = /var/log/mysql/mysql-slow.log
+
+# MIRASZ #
+long_query_time                = 5
+log-queries-not-using-indexes  = 0
+
+# REDUCE MEMORY USAGE #
+performance_schema             = 0
+
