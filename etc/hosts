@@ -1,0 +1,10 @@
+127.0.0.1	localhost
+103.4.174.110	test04
+103.4.174.109	test03
+103.4.174.108	test02
+103.4.174.107	test01
+
+# The following lines are desirable for IPv6 capable hosts
+::1     localhost ip6-localhost ip6-loopback
+ff02::1 ip6-allnodes
+ff02::2 ip6-allrouters
