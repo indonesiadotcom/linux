@@ -1,0 +1,1 @@
+/var/www/mag2/var/varnish.vcl
