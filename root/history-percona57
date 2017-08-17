@@ -1,0 +1,10 @@
+wget https://repo.percona.com/apt/percona-release_0.1-4.$(lsb_release -sc)_all.deb
+dpkg -i percona-release_0.1-4.$(lsb_release -sc)_all.deb
+apt update
+apt-get install percona-server-server-5.7
+#vi /etc/mysql/percona-server.conf.d/mysqld.cnf 
+#mysql -e 'create database mag21'
+#mysql -e 'create database magento2'
+#mysql -e 'grant all privileges on magento2.* to magento@"%"'
+#mysql -e 'flush privileges'
+#cat /etc/hosts
