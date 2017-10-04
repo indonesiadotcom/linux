@@ -68,5 +68,9 @@ sed -i 's/;date.timezone =/date.timezone = Asia\/Jakarta/g' /etc/php.ini
 curl -sS https://getcomposer.org/installer | php
 mv composer.phar /usr/local/bin/composer
 
+#BACKUP
+cp $script/linux/backup/00-backup-db.sh $script/
+crontab -e
+#0 0 * * * /data/scripts/00-backup-db.sh
 
 
