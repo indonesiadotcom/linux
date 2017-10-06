@@ -20,6 +20,7 @@ NAMER="$DATE-$DB-routines.sql"
 #NAMER1="$DATE-$DB1-routines.sql"
 
 # Execution
+mkdir $DIR
 mysqldump $AUTH $OPT $DB | gzip > $DIR$NAME
 mysqldump $AUTH $OPT $OPT1 $DB > $DIR$NAMER
 #mysqldump $AUTH $OPT $DB1 | gzip > $DIR$NAME1

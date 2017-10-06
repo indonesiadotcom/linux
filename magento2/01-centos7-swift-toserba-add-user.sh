@@ -21,3 +21,8 @@ crontab -e
 #save crontab
 #exit
 
+#chmod 755 /home/$client
+
+#mysql -e 'create database $client'
+#mysql -e 'grant all privileges on $client.* to $client@localhost identified by "pwduser"'
+
