@@ -86,6 +86,14 @@ sed -i 's/memory_limit = 128M/memory_limit = 2048M/g' /etc/php.ini
 sed -i 's/max_execution_time = 30/max_execution_time = 600/g' /etc/php.ini
 sed -i 's/zlib.output_compression = Off/zlib.output_compression = On/g' /etc/php.ini
 sed -i 's/;date.timezone =/date.timezone = Asia\/Jakarta/g' /etc/php.ini
+sed -i 's/user = php-fpm/user = toserbayogya/g' /etc/php-fpm.d/www.conf
+sed -i 's/group = php-fpm/group = toserbayogya/g' /etc/php-fpm.d/www.conf
+sed -i 's/listen = 127.0.0.1:9000/;listen = 127.0.0.1:9000/g' /etc/php-fpm.d/www.conf
+sed -i 's/;listen = \/run\/php-fpm\/www.sock/listen = \/run\/php-fpm\/www.sock/g' /etc/php-fpm.d/www.conf
+sed -i 's/;listen.owner = root/listen.owner = nginx/g' /etc/php-fpm.d/www.conf
+sed -i 's/;listen.group = root/listen.group = nginx/g' /etc/php-fpm.d/www.conf
+sed -i 's/;listen.mode = 0660/listen.mode = 0660/g' /etc/php-fpm.d/www.conf
+
 systemctl enable php-fpm
 systemctl start php-fpm
 
@@ -95,6 +103,7 @@ mv composer.phar /usr/local/bin/composer
 
 #BACKUP
 cp $script/linux/backup/00-backup-db.sh $script/
+chmod +x $script/00-backup-db.sh
 crontab -e
 #0 0 * * * /data/scripts/00-backup-db.sh
 
