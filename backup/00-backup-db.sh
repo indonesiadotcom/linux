@@ -1,16 +1,15 @@
 #!/bin/bash
 # Database Backup Script
-# Originator    : Mirasz
 
 # Global
 DATE=$(date +%Y%m%d%H%M)
 
 # MySQL
-AUTH="-hlocalhost -uhigienis -p0f97ad465aaa9ddc90025a5b4dd0b8d9@H"
+AUTH="-hlocalhost -uuser -ppassword"
 OPT="--opt --single-transaction"
 OPT1="--no-data --no-create-db --routines --triggers --events"
-DB="higienis"
-#DB1="indolistrik1"
+DB="namadb"
+#DB1="namadb1"
 
 # Directory & File
 DIR="/data/backups/"
